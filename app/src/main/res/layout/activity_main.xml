@@ -1,18 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/pembuka"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Selamat datang di aplikasi kami!\nSilakan isi Luas bangun datar yang ingin anda cari "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/jenisBangunDatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Pilih Jenis Bangun Datar:"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pembuka" />
+
+    <RadioGroup
+        android:id="@+id/jenis_bangun_datar_radio_group"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/jenisBangunDatar"
+        app:layout_constraintTop_toBottomOf="@id/jenisBangunDatar">
+
+        <RadioButton
+            android:id="@+id/persegi_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/persegi" />
+
+        <RadioButton
+            android:id="@+id/persegi_panjang_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/persegi_panjang" />
+
+        <RadioButton
+            android:id="@+id/lingkaran_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lingkaran" />
+
+        <RadioButton
+            android:id="@+id/segitiga_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/segitiga" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ukuran1_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ukuran 1:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jenis_bangun_datar_radio_group"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/ukuran1_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ukuran1_text_view"
+        app:layout_constraintTop_toTopOf="@+id/ukuran1_text_view" />
+
+    <TextView
+        android:id="@+id/ukuran2_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Ukuran 2:"
+        app:layout_constraintStart_toStartOf="@+id/ukuran1_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/ukuran1_text_view"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/ukuran2_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/ukuran2_text_view"
+        app:layout_constraintTop_toTopOf="@+id/ukuran2_text_view" />
+
+    <TextView
+        android:id="@+id/hasil_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Hasil:"
+        app:layout_constraintStart_toStartOf="@+id/ukuran1_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/ukuran2_text_view" />
+
+    <TextView
+        android:id="@+id/luas_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/hasil_text_view"
+        app:layout_constraintTop_toTopOf="@+id/hasil_text_view" />
+
+    <Button
+        android:id="@+id/hitung_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Hitung"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/hasil_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
