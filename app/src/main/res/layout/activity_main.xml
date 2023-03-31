@@ -73,43 +73,42 @@
             android:text="@string/segitiga" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/ukuran1_text_view"
-        android:layout_width="wrap_content"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ukuran1_hint"
+        android:layout_width="match_parent"
+        style="?attr/textInputFilledStyle"
         android:layout_height="wrap_content"
-        android:text="Ukuran 1:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jenis_bangun_datar_radio_group"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/jenis_bangun_datar_radio_group">
 
-    <EditText
-        android:id="@+id/ukuran1_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ukuran1_text_view"
-        app:layout_constraintTop_toTopOf="@+id/ukuran1_text_view" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ukuran1_inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ukuran_1" />
 
-    <TextView
-        android:id="@+id/ukuran2_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Ukuran 2:"
-        app:layout_constraintStart_toStartOf="@+id/ukuran1_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/ukuran1_text_view"
-        app:layout_constraintVertical_chainStyle="packed" />
 
-    <EditText
-        android:id="@+id/ukuran2_edit_text"
-        android:layout_width="0dp"
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ukuran2_hint"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/ukuran2_text_view"
-        app:layout_constraintTop_toTopOf="@+id/ukuran2_text_view" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ukuran1_hint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ukuran2_inp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ukuran_2" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/hasil_text_view"
@@ -117,8 +116,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Hasil:"
-        app:layout_constraintStart_toStartOf="@+id/ukuran1_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/ukuran2_text_view" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintStart_toStartOf="@+id/ukuran1_hint"
+        app:layout_constraintTop_toBottomOf="@+id/ukuran2_hint" />
 
     <TextView
         android:id="@+id/luas_text_view"
@@ -129,11 +129,13 @@
         app:layout_constraintTop_toTopOf="@+id/hasil_text_view" />
 
     <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/hitung_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Hitung"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hasil_text_view" />

@@ -4,4 +4,6 @@
     <string name="persegi_panjang">Persegi Panjang</string>
     <string name="lingkaran">Lingkaran</string>
     <string name="segitiga">Segitiga</string>
+    <string name="ukuran_1">ukuran 1 :</string>
+    <string name="ukuran_2">ukuran 2 :</string>
 </resources>
