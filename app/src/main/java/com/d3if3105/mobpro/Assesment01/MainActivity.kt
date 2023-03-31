@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hitungLuas() {
-        val ukuran1 = binding.ukuran1EditText.text.toString().toDoubleOrNull()
-        val ukuran2 = binding.ukuran2EditText.text.toString().toDoubleOrNull()
+        val ukuran1 = binding.ukuran1Inp.text.toString().toDoubleOrNull()
+        val ukuran2 = binding.ukuran2Inp.text.toString().toDoubleOrNull()
 
         if (ukuran1 == null || ukuran2 == null) {
             Toast.makeText(this, "Harap masukkan ukuran terlebih dahulu", Toast.LENGTH_SHORT).show()
