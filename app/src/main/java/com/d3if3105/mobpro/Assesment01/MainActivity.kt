@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.luasTextView.text = "%.2f".format(luas)
+        binding.luasTextView.text = "%.0f".format(luas)
     }
 
 }

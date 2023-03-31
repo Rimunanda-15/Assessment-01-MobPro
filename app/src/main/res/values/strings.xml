@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hitung Luas BangunDatar</string>
+    <string name="app_name">Hitung Luas Bangun Datar</string>
     <string name="persegi">Persegi</string>
     <string name="persegi_panjang">Persegi Panjang</string>
     <string name="lingkaran">Lingkaran</string>
