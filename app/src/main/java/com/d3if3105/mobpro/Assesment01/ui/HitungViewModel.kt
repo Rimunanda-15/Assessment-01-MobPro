@@ -1,14 +1,25 @@
 package com.d3if3105.mobpro.Assesment01.ui
+
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.d3if3105.mobpro.Assesment01.R
+import com.d3if3105.mobpro.Assesment01.db.BangunDatarDao
+import com.d3if3105.mobpro.Assesment01.db.BangunDatarEntity
 import com.d3if3105.mobpro.Assesment01.model.BangunDatar
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlin.math.PI
 import kotlin.math.pow
 
-class MainViewModel : ViewModel() {
+class HitungViewModel(private val bangunDatarDao: BangunDatarDao) : ViewModel() {
+
     val luas = MutableLiveData<Double>()
     val error = MutableLiveData<String>()
+
+    val data = bangunDatarDao.getLastBangunDatar()
 
     fun hitungLuas(ukuran1Str: String, ukuran2Str: String, jenisBangunDatar: Int) {
         val ukuran1 = ukuran1Str.toDoubleOrNull()
@@ -38,5 +49,17 @@ class MainViewModel : ViewModel() {
         }
 
         luas.value = luasValue
+
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val bangunDatarEntity = BangunDatarEntity(
+                    sisi1 = ukuran1,
+                    sisi2 = ukuran2,
+                    hasil = luasValue
+                )
+                val insertedId = bangunDatarDao.insert(bangunDatarEntity)
+                Log.d("DataInserted", "ID: $insertedId")
+            }
+        }
     }
 }

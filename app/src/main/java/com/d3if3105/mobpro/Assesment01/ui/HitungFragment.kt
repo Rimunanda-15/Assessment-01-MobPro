@@ -9,11 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.d3if3105.mobpro.Assesment01.databinding.FragmentHitungBinding
-
+import com.d3if3105.mobpro.Assesment01.db.BangunDatarDb
+import com.d3if3105.mobpro.Assesment01.ui.hitung.HitungViewModelFactory
 
 class HitungFragment : Fragment() {
     private lateinit var binding: FragmentHitungBinding
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: HitungViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +26,10 @@ class HitungFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+        val bangunDatarDao = BangunDatarDb.getInstance(requireContext()).bangunDatarDao()
+        val viewModelFactory = HitungViewModelFactory(bangunDatarDao)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(HitungViewModel::class.java)
 
         binding.hitungButton.setOnClickListener {
             viewModel.hitungLuas(

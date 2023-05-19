@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.d3if3105.mobpro.Assesment01.model.BangunDatar
 
 @Database(entities = [BangunDatarEntity::class], version = 1, exportSchema = false)
 abstract class BangunDatarDb : RoomDatabase() {
-    abstract val dao: Dao
+    abstract fun bangunDatarDao(): BangunDatarDao
     companion object {
         @Volatile
         private var INSTANCE: BangunDatarDb? = null

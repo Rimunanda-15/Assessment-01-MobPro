@@ -6,7 +6,7 @@ import androidx.room.Query
 
 
 @androidx.room.Dao
-interface Dao {
+interface BangunDatarDao {
     @Insert
     fun insert(bangunDatar: BangunDatarEntity)
 
