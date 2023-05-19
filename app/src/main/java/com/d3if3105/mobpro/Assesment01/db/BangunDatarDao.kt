@@ -10,6 +10,6 @@ interface BangunDatarDao {
     @Insert
     fun insert(bangunDatar: BangunDatarEntity)
 
-    @Query("SELECT * FROM bangunDatar ORDER BY id DESC LIMIT 1")
+    @Query("SELECT * FROM bangunDatar ORDER BY id DESC ")
     fun getLastBangunDatar(): LiveData<BangunDatarEntity?>
 }

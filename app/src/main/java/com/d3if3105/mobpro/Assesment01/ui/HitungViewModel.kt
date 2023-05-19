@@ -19,7 +19,7 @@ class HitungViewModel(private val bangunDatarDao: BangunDatarDao) : ViewModel() 
     val luas = MutableLiveData<Double>()
     val error = MutableLiveData<String>()
 
-    val data = bangunDatarDao.getLastBangunDatar()
+
 
     fun hitungLuas(ukuran1Str: String, ukuran2Str: String, jenisBangunDatar: Int) {
         val ukuran1 = ukuran1Str.toDoubleOrNull()
@@ -57,8 +57,8 @@ class HitungViewModel(private val bangunDatarDao: BangunDatarDao) : ViewModel() 
                     sisi2 = ukuran2,
                     hasil = luasValue
                 )
-                val insertedId = bangunDatarDao.insert(bangunDatarEntity)
-                Log.d("DataInserted", "ID: $insertedId")
+                bangunDatarDao.insert(bangunDatarEntity)
+
             }
         }
     }

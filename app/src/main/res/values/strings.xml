@@ -6,4 +6,7 @@
     <string name="segitiga">Segitiga</string>
     <string name="ukuran_1">ukuran 1 :</string>
     <string name="ukuran_2">ukuran 2 :</string>
+    <string name="sisi_1_label">Sisi 1: %s</string>
+    <string name="sisi_2_label">Sisi 2: %s</string>
+    <string name="hasil_label">Hasil: %s</string>
 </resources>
