@@ -1,5 +1,4 @@
 package com.d3if3105.mobpro.Assesment01.ui
-
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -32,7 +31,7 @@ class HitungFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val bangunDatarDao = BangunDatarDb.getInstance(requireContext()).bangunDatarDao()
-        val viewModelFactory = HitungViewModelFactory(bangunDatarDao)
+        val viewModelFactory = HitungViewModelFactory(bangunDatarDao, requireActivity().application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(HitungViewModel::class.java)
 
         binding.hitungButton.setOnClickListener {
@@ -56,12 +55,22 @@ class HitungFragment : Fragment() {
         viewModel.luas.observe(viewLifecycleOwner, Observer { luas ->
             binding.luasTextView.text = "%.0f".format(luas)
         })
+
+        viewModel.getLastUsedShape(requireContext())?.let { lastUsedShape ->
+            when (lastUsedShape) {
+                "persegi" -> binding.persegiRadioButton.isChecked = true
+                "persegi_panjang" -> binding.persegiPanjangRadioButton.isChecked = true
+                "lingkaran" -> binding.lingkaranRadioButton.isChecked = true
+                "segitiga" -> binding.segitigaRadioButton.isChecked = true
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.options_menu, menu)
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_about -> {
@@ -72,6 +81,10 @@ class HitungFragment : Fragment() {
                 val url = "https://www.cnnindonesia.com/edukasi/20221129094754-569-880180/rumus-bangun-datar-lengkap-untuk-menghitung-luas-dan-keliling"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                 startActivity(intent)
+                return true
+            }
+            R.id.menu_histori -> {
+                findNavController().navigate(R.id.action_hitungFragment_to_historiFragment)
                 return true
             }
             else -> return super.onOptionsItemSelected(item)

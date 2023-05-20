@@ -37,13 +37,11 @@ class HistoriAdapter(private val context: Context) : RecyclerView.Adapter<Histor
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val tvTanggal: MaterialTextView = itemView.findViewById(R.id.textViewTanggal)
         private val tvSisi1: MaterialTextView = itemView.findViewById(R.id.textViewUkuran)
         private val tvSisi2: MaterialTextView = itemView.findViewById(R.id.textViewUkuran2)
         private val tvHasil: MaterialTextView = itemView.findViewById(R.id.textViewLuas)
 
         fun bind(item: BangunDatarEntity) {
-            tvTanggal.text = item.tanggal.toString()
             tvSisi1.text = context.getString(R.string.sisi_1_label, item.sisi1.toString())
             tvSisi2.text = context.getString(R.string.sisi_2_label, item.sisi2.toString())
             tvHasil.text = context.getString(R.string.hasil_label, item.hasil.toString())

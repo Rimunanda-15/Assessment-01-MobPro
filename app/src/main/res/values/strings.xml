@@ -18,4 +18,8 @@ Mobpro 1. Temukan kodenya di https://github.com/Rimunanda-15/Assessment-01-MobPr
 
     </string>
     <string name="lihat_rumus_diwebsite">lihat rumus di website</string>
+    <string name="histori">histori</string>
+    <string name="delete_confirmation_title">"Hapus Data "</string>
+    <string name="delete_confirmation_message">data berhasil dihapus</string>
+    <string name="delete">hapus</string>
 </resources>
