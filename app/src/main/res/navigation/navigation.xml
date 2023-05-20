@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_hitungFragment_to_rumusFragment"
             app:destination="@id/rumusFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/rumusFragment"
         android:name="com.d3if3105.mobpro.Assesment01.ui.RumusFragment"
         android:label="RumusFragment"
         tools:layout="@layout/fragment_rumus"/>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.d3if3105.mobpro.Assesment01.ui.AboutFragment"
+        android:label="@string/tentang_aplikasi"
+        tools:layout="@layout/fragment_about"/>
 </navigation>

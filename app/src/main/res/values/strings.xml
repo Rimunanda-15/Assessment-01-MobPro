@@ -11,4 +11,10 @@
     <string name="hasil_label">Hasil: %s</string>
     <string name="hitung">Hitung</string>
     <string name="lihat_rumus">lihat rumus</string>
+
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Aplikasi Bangun Datar merupakan sebuah aplikasi Android untuk menghitung luas dan keliling beberapa bangun datar seperti persegi, persegi panjang, lingkaran, dan segitiga. Aplikasi ini memberikan kemudahanbagi pengguna untuk menghitung parameter-parameter tersebut dengan mudah dan cepat.Aplikasi ini dibuat untuk kelas
+Mobpro 1. Temukan kodenya di https://github.com/Rimunanda-15/Assessment-01-MobPro.git © 2023 Rimunanda-15.\nAll rights reserved.
+
+    </string>
 </resources>
