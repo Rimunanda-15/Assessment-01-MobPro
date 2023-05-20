@@ -9,4 +9,6 @@
     <string name="sisi_1_label">Sisi 1: %s</string>
     <string name="sisi_2_label">Sisi 2: %s</string>
     <string name="hasil_label">Hasil: %s</string>
+    <string name="hitung">Hitung</string>
+    <string name="lihat_rumus">lihat rumus</string>
 </resources>

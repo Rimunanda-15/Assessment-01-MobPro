@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.d3if3105.mobpro.Assesment01.R
 import com.d3if3105.mobpro.Assesment01.databinding.FragmentHitungBinding
 import com.d3if3105.mobpro.Assesment01.db.BangunDatarDb
 import com.d3if3105.mobpro.Assesment01.ui.hitung.HitungViewModelFactory
@@ -36,6 +38,12 @@ class HitungFragment : Fragment() {
                 binding.ukuran1Inp.text.toString(),
                 binding.ukuran2Inp.text.toString(),
                 binding.jenisBangunDatarRadioGroup.checkedRadioButtonId
+            )
+        }
+
+        binding.rumus.setOnClickListener {
+            it.findNavController().navigate(
+                R.id.action_hitungFragment_to_rumusFragment
             )
         }
 
